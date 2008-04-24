@@ -1,0 +1,49 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po origsrc/libcddb-1.3.0/doc/doxygen.conf src/libcddb-1.3.0/doc/doxygen.conf
+--- origsrc/libcddb-1.3.0/doc/doxygen.conf	2005-07-09 04:28:48.000000000 -0500
++++ src/libcddb-1.3.0/doc/doxygen.conf	2008-04-24 15:16:48.109375000 -0500
+@@ -423,7 +423,7 @@
+ # directories like "/usr/src/myproject". Separate the files or directories 
+ # with spaces.
+ 
+-INPUT                  = ../include/cddb/
++INPUT                  = @top_srcdir@/include/cddb/
+ 
+ # If the value of the INPUT tag contains directories, you can use the 
+ # FILE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp 
+@@ -465,7 +465,7 @@
+ # directories that contain example code fragments that are included (see 
+ # the \include command).
+ 
+-EXAMPLE_PATH           = ../examples
++EXAMPLE_PATH           = @top_srcdir@/examples
+ 
+ # If the value of the EXAMPLE_PATH tag contains directories, you can use the 
+ # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po origsrc/libcddb-1.3.0/examples/Makefile.am src/libcddb-1.3.0/examples/Makefile.am
+--- origsrc/libcddb-1.3.0/examples/Makefile.am	2006-10-15 02:33:33.000000000 -0500
++++ src/libcddb-1.3.0/examples/Makefile.am	2008-04-24 15:16:48.109375000 -0500
+@@ -4,4 +4,4 @@
+ bin_PROGRAMS = cddb_query
+ cddb_query_SOURCES = main.c main.h do_query.c do_read.c do_display.c \
+                      cd_access.c do_sites.c do_search.c do_album.c
+-cddb_query_LDADD = $(top_builddir)/lib/libcddb.la $(LIBICONV) $(LIBCDIO_LIBS) 
++cddb_query_LDADD = $(top_builddir)/lib/libcddb.la $(LTLIBICONV) $(LIBCDIO_LIBS) 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po origsrc/libcddb-1.3.0/lib/Makefile.am src/libcddb-1.3.0/lib/Makefile.am
+--- origsrc/libcddb-1.3.0/lib/Makefile.am	2006-10-15 04:11:21.000000000 -0500
++++ src/libcddb-1.3.0/lib/Makefile.am	2008-04-24 15:16:48.421875000 -0500
+@@ -5,4 +5,4 @@
+ libcddb_la_SOURCES = cddb_track.c cddb_disc.c cddb_regex.c cddb_error.c \
+ 					 cddb_conn.c cddb_cmd.c cddb_net.c cddb_log.c cddb_util.c \
+ 					 cddb.c cddb_site.c ll.c
+-libcddb_la_LDFLAGS = -no-undefined -version-info 4:3:2 $(LIBICONV)
++libcddb_la_LDFLAGS = -no-undefined -version-info 4:3:2 $(LTLIBICONV)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x libtool.m4 -x ltoptions.m4 -x ltsugar.m4 -x ltversion.m4 -x 'lt~obsolete.m4' -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x config.rpath -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x intl -x m4 -x po origsrc/libcddb-1.3.0/libcddb.pc.in src/libcddb-1.3.0/libcddb.pc.in
+--- origsrc/libcddb-1.3.0/libcddb.pc.in	2005-04-16 14:50:07.000000000 -0500
++++ src/libcddb-1.3.0/libcddb.pc.in	2008-04-24 15:17:01.640625000 -0500
+@@ -6,5 +6,5 @@
+ Name: libcddb
+ Description: CDDB server access library
+ Version: @VERSION@
+-Libs: -L${libdir} -lcddb @LIBICONV@
++Libs: -L${libdir} -lcddb @LTLIBICONV@
+ Cflags: -I${includedir}
