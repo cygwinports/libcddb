@@ -1,0 +1,15 @@
+DESCRIPTION="Library for accessing CDDB server data"
+HOMEPAGE="http://libcddb.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+PATCH_URI="1.3.1-libiconv.patch
+           1.3.1-vpath.patch"
+
+PKG_NAMES="${PN} ${PN}2 ${PN}-devel"
+PKG_HINTS="setup lib devel"
+libcddb_CONTENTS='usr/bin/*.exe usr/share/'
+libcddb2_CONTENTS='usr/bin/cygcddb-2.dll'
+libcddb_devel_CONTENTS='usr/include/ usr/lib/'
+
+DIFF_EXCLUDES="intl m4 po version.h"
+
+CYGCONF_ARGS="ac_cv_header_windows_h=no ac_cv_header_winsock2_h=no"
