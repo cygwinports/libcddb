@@ -1,5 +1,5 @@
 category: Audio
-requires: cygwin libcddb2 libcdio10 libgcc1
+requires: libcddb2 libcdio10 libgcc1
 sdesc: "Library for accessing CDDB server data (utilities)"
 ldesc: "Libcddb is a C library to access data on a CDDB server (freedb.org).
 It allows you to:

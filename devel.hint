@@ -1,5 +1,5 @@
 category: Audio
-requires: cygwin libcddb2 libiconv
+requires: libcddb2 libiconv
 external-source: libcddb
 sdesc: "Library for accessing CDDB server data (development)"
 ldesc: "Libcddb is a C library to access data on a CDDB server (freedb.org).
