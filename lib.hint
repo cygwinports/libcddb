@@ -1,5 +1,5 @@
 category: Audio
-requires: libgcc1 libiconv2
+requires: libiconv2
 external-source: libcddb
 sdesc: "Library for accessing CDDB server data (runtime)"
 ldesc: "Libcddb is a C library to access data on a CDDB server (freedb.org).
